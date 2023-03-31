@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 
 const db = new Sequelize("whatsmylunch_db", "root", "", {
-  host: "18.136.194.66",
+  host: "127.0.0.1",
   dialect: "mysql",
 });
 
