@@ -3,13 +3,15 @@ import jwt from "jsonwebtoken";
 
 export const refreshToken = async (req, res) => {
   try {
-    const refreshToken = req.cookies.refreshToken;
+    // console.log("HELLLOOO", req.headers["authorization"]);
+    const refreshToken = req.headers["authorization"].split(" ")[1];
     if (!refreshToken) return res.sendStatus(401);
     const user = await Users.findAll({
       where: {
         refresh_token: refreshToken,
       },
     });
+    // console.log(user);
     if (!user[0]) return res.sendStatus(403);
     jwt.verify(
       refreshToken,
@@ -30,6 +32,6 @@ export const refreshToken = async (req, res) => {
       }
     );
   } catch (error) {
-    console.log(error);
+    console.log("Error");
   }
 };

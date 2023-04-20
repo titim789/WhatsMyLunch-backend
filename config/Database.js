@@ -1,7 +1,8 @@
 import { Sequelize } from "sequelize";
 
-const db = new Sequelize("whatsmylunch_db", "root", "", {
-  host: "127.0.0.1",
+const db = new Sequelize("whatsmylunch_db", "root", "password", {
+  //FOR CLOUD - username: user password:password
+  host: "localhost",
   dialect: "mysql",
 });
 
