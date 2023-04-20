@@ -20,6 +20,7 @@ import {
   getFoodDataSetById,
 } from "../controllers/FoodDataSet.js";
 import { getUsersTastePalette } from "../controllers/UsersTastePalette.js";
+import { getGoogleNearbyFood } from "../controllers/GoogleNearbyFood.js";
 
 const router = express.Router();
 
@@ -48,5 +49,8 @@ router.post("/fooddataset", getFoodDataSetById);
 
 //user taste palette
 router.get("/userstastepalette", getUsersTastePalette);
+
+//Google API
+router.post("/getnearbyfood", getGoogleNearbyFood);
 
 export default router;
